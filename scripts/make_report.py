@@ -98,7 +98,7 @@ def winDTFTdB(w):                          # Sec. 5.2.1: quasi-DTFT by 100x zero
     W = np.abs(fftshift(fft(w, Nz)))
     return 2*np.pi/Nz*np.arange(Nz) - np.pi, 20*np.log10(W / W.max())
 
-def level_re_A1(x, w, A1):                 # Fig. 6-type level in dB re A1, coherent gain corrected
+def level_re_A1(x, w, A1):                 # Fig. 6-type level in dB re A1, CG-corrected
     return fft2db(fft(x * w)) - 20*np.log10(w.mean()) - 20*np.log10(A1)
 ''')
 rep.para("Three metrics compare the windows objectively for each weak tone: **M1 – DFT visibility** (the tone "
@@ -166,7 +166,7 @@ rep.figure(FIG / "fig16_longer_record.png", "Check with a longer record: C1 with
 
 # 5 ---------------------------------------------------------------------------------------------------------------
 rep.heading("5. Conclusions")
-rep.para("For the reasons given, we conclude that:")
+rep.para("For the reasons given, we conclude that:", keep_next=True)
 rep.bullets([
     "**Best detection of weak tones close to a strong one:** a low-sidelobe window chosen by the amplitude ratio "
     "– Hann/Hamming down to about −30 dB, Blackman for −40 … −50 dB, Blackman–Harris for −60 dB and "

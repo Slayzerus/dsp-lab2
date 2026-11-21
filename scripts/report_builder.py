@@ -97,10 +97,11 @@ class Report:
         r.bold, r.font.name, r.font.size = True, FONT, Pt(12)
         return par
 
-    def para(self, text, size=12, align=WD_ALIGN_PARAGRAPH.JUSTIFY):
+    def para(self, text, size=12, align=WD_ALIGN_PARAGRAPH.JUSTIFY, keep_next=False):
         par = self.doc.add_paragraph()
         par.alignment = align
         par.paragraph_format.space_after = Pt(4)
+        par.paragraph_format.keep_with_next = keep_next
         return self._runs(par, text, size)
 
     def bullets(self, items, size=12, numbered=False):
