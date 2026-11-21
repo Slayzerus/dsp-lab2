@@ -19,7 +19,7 @@ REPO = "https://github.com/Slayzerus/dsp-lab2"
 
 rep = Report(TEMPLATE, lab=2, date=date.today().strftime("%d.%m.%Y"),
              topic="Windowing: influence of window functions on the detection and separation of close sinusoids",
-             variant="all variants 1–15")
+             variant="wszystkie (1–15)")
 
 # 1 ---------------------------------------------------------------------------------------------------------------
 rep.heading("1. Problem statement")
